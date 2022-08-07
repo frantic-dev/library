@@ -21,16 +21,17 @@ const pages = document.querySelector('#pages');
 let pagesInput = '';
 
 pages.addEventListener('keyup', () => {
-    return pagesInput =  genre.value;
+    return pagesInput =  pages.value;
 });
 
 const button = document.querySelector('#button');
 const container = document.querySelector("#container");
 
 button.addEventListener('click', () => {
-    addBookToLibrary()
+    addBookToLibrary();
     let lastBook = myLibrary.length - 1;
-    createDiv(myLibrary[lastBook])
+    createDiv(myLibrary[lastBook]);
+    hideForm();
 })
  
 
@@ -54,4 +55,17 @@ function createDiv(book) {
         Pages: ${book.pages}`;
         
         container.appendChild(div);
+}
+
+const addBook = document.querySelector('button');
+const form = document.querySelector('#form');
+
+addBook.addEventListener('click' , showForm);
+
+function showForm() {
+    return form.setAttribute('style', "display:block; position: fixed; top:calc((100% - 280px)/2); left:calc((100% - 303px)/2)");
+}
+
+function hideForm() {
+    return form.setAttribute('style', "display: none;")
 }
