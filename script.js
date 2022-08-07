@@ -56,11 +56,25 @@ function createCard(book) {
         Pages: ${book.pages}`;
         div.style.position = "relative";
         container.appendChild(div);
+
     let removeBtn = document.createElement('span');
         removeBtn.textContent = "X";
         removeBtn.setAttribute('style', 'position: absolute; right: 5px; top: 5px; cursor: pointer;')
         div.appendChild(removeBtn);
-        removeBtn.addEventListener('click',() => div.remove())
+        removeBtn.addEventListener('click',() => div.remove());
+
+    let read = document.createElement('button');
+        read.textContent = "Not Read";
+        read.setAttribute('style', "background-color: rgb(255, 123, 123); display: block; margin-top: 10px; padding: 5px 10px;");
+        div.appendChild(read);
+        read.addEventListener('click', () => {
+            read.textContent = 'Read';
+            if(read.style.backgroundColor === 'rgb(255, 123, 123)') read.style.backgroundColor = 'rgb(45, 255, 80)';
+            else {
+                read.textContent = "Not read"
+                read.style.backgroundColor = 'rgb(255, 123, 123)'
+            }
+        })
 };
 
 
