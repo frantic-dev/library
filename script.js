@@ -1,5 +1,3 @@
-let myLibrary = [];
-
 const title = document.querySelector('#title');
 let titleInput = "";
 
@@ -28,10 +26,32 @@ pages.addEventListener('keyup', () => {
 
 const button = document.querySelector('#button');
 const container = document.querySelector("#container");
-let div = document.createElement('div')
 
-button.addEventListener('click', () => { 
-    div.textContent = `${titleInput} is by the author ${authorInput}, of ${genreInput} genre. it is ${pagesInput} pages long.`;
-    container.appendChild(div);
+button.addEventListener('click', () => {
+    addBookToLibrary()
+    let lastBook = myLibrary.length - 1;
+    createDiv(myLibrary[lastBook])
 })
  
+
+let myLibrary = [];
+
+function Book(title , author , genre , pages ) {
+    this.title = title,
+    this.author = author,
+    this.genre = genre,
+    this.pages = pages
+}
+function addBookToLibrary() {
+    return myLibrary.push(new Book(titleInput, authorInput, genreInput, pagesInput))
+}
+
+function createDiv(book) {
+    let div = document.createElement('div');
+        div.innerHTML = `Title : ${book.title} <br>
+        Author: ${book.author} <br>
+        Genre: ${book.genre} <br>
+        Pages: ${book.pages}`;
+        
+        container.appendChild(div);
+}
