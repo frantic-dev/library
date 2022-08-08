@@ -24,10 +24,10 @@ pages.addEventListener('keyup', () => {
     return pagesInput =  pages.value;
 });
 
-const button = document.querySelector('#button');
+const doneBtn = document.querySelector('#button');
 const container = document.querySelector("#container");
 
-button.addEventListener('click', () => {
+doneBtn.addEventListener('click', () => {
     addBookToLibrary();
     let lastBook = myLibrary.length - 1;
     createCard(myLibrary[lastBook]);
