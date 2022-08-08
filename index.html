@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&family=Roboto+Slab:wght@900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?&family=Open+Sans:wght@400;500&family=Raleway:wght@700&family=Josefin+Sans:wght@700&family=Roboto+Slab:wght@600;900&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/6eb20c383e.js" crossorigin="anonymous"></script>
     <title>Library</title>
 </head>
@@ -23,28 +23,22 @@
     <br>
     <div id="form">
     <!-- <form action="#" method="get"> -->
-        <fieldset>
-            <legend style="margin-left: 15px;">Book Details</legend>
+            <h2>Book Details :</h2>
 
             <label for="title">Book Title : </label>
             <input type="text" id="title" placeholder="Enter title" name="title">
-                <br>
 
             <label for="author">Author : </label>
             <input type="text" id="author" placeholder="Enter author" name="author">
-                <br>
 
             <label for="genre">Genre : </label>
             <input type="text" id="genre" placeholder="Enter genre" name="genre">
-                <br>
 
             <label for="pages">Pages : </label>
             <input type="number" id="pages" min="1" placeholder="Enter number of pages" name="pages">
-                <br>
-            <input type="submit" value="Done" id="button">
-        </fieldset>
+            <input type="submit" value="Done" id="done-btn">
     </div>
-    <div id="container"></div>
+    <div id="book-container"></div>
 
 </body>
 </html>

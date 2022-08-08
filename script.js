@@ -24,8 +24,8 @@ pages.addEventListener('keyup', () => {
     return pagesInput =  pages.value;
 });
 
-const doneBtn = document.querySelector('#button');
-const container = document.querySelector("#container");
+const doneBtn = document.querySelector('#done-btn');
+const bookContainer = document.querySelector("#book-container");
 
 let booksInLibrary = "";
 
@@ -57,7 +57,7 @@ function createCard(book) {
         Genre: ${book.genre} <br>
         Pages: ${book.pages}`;
         div.style.position = "relative";
-        container.appendChild(div);
+        bookContainer.appendChild(div);
 
     booksInLibrary = document.querySelectorAll('div>div');
     booksInLibrary = [...booksInLibrary];
@@ -97,7 +97,7 @@ const form = document.querySelector('#form');
 addBook.addEventListener('click' , showForm);
 
 function showForm() {
-    return form.setAttribute('style', "display:block; position: fixed; top:calc((100% - 280px)/2); left:calc((100% - 303px)/2)");
+    return form.setAttribute('style',"display:block");
 };
 
 function hideForm() {
