@@ -3,6 +3,26 @@
     padding: 0;
     box-sizing: border-box;
 }
+header{
+    border: 1px solid;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+h1 {
+    font-family: 'roboto slab', sans-serif;
+    font-size: 400%;
+}
+#add-book-btn {
+    padding: 10px;
+    font-family: 'josefin sans', serif;
+}
+img {
+position: fixed;
+bottom: 0;
+right: 0;
+width: 45%;
+}
 input {
     margin: 10px 10px;
 }
