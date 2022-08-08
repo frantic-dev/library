@@ -6,6 +6,7 @@
 body {
     font-family: 'open sans';
     font-weight: 500;
+    background-color: rgba(191, 196, 255, 0.63);
 }
 header{
     display: flex;
@@ -24,7 +25,7 @@ img {
 position: fixed;
 bottom: 0;
 right: -4%;
-width: 45%;
+width: 40%;
 }
 h2 {
     font-family: 'roboto slab', sans-serif;
@@ -47,14 +48,19 @@ label {
     font-size: 100%;
 }
 #book-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr) ;
-    gap: 10px;
+    display: flex;
+    flex-flow: row wrap;
     margin: 10px;
 }
 div > div {
     border: 1px solid;
     padding: 10px;
+    width: 14rem;
+    height: 14rem;
+    margin: 10px;
+    background-color: white;
+    border-radius: 2%;
+    box-shadow: 0 0 5px rgba(145, 139, 139, 0.575);
 }
 #form {
     display: none;
