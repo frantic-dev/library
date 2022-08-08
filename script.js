@@ -27,6 +27,8 @@ pages.addEventListener('keyup', () => {
 const doneBtn = document.querySelector('#button');
 const container = document.querySelector("#container");
 
+let booksInLibrary = "";
+
 doneBtn.addEventListener('click', () => {
     addBookToLibrary();
     let lastBook = myLibrary.length - 1;
@@ -57,11 +59,19 @@ function createCard(book) {
         div.style.position = "relative";
         container.appendChild(div);
 
+    booksInLibrary = document.querySelectorAll('div>div');
+    booksInLibrary = [...booksInLibrary];
+
     let removeBtn = document.createElement('span');
         removeBtn.textContent = "X";
         removeBtn.setAttribute('style', 'position: absolute; right: 5px; top: 5px; cursor: pointer;')
         div.appendChild(removeBtn);
-        removeBtn.addEventListener('click',() => div.remove());
+        removeBtn.addEventListener('click',() => {
+            let indexOfRemoved = booksInLibrary.indexOf(div);
+            div.remove();
+            removeBook(myLibrary, indexOfRemoved);
+            removeBook(booksInLibrary, indexOfRemoved);
+        });
 
     let read = document.createElement('button');
         read.textContent = "Not Read";
@@ -77,7 +87,9 @@ function createCard(book) {
         })
 };
 
-
+function removeBook(array,index) {
+    return array.splice(index , 1);
+}
 
 const addBook = document.querySelector('button');
 const form = document.querySelector('#form');
