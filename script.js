@@ -91,9 +91,12 @@ function removeBook(array,index) {
     return array.splice(index , 1);
 }
 
-const addBook = document.querySelector('button');
-const form = document.querySelector('#form');
+const addBook = document.querySelector('#add-book-btn');
+const form = document.querySelector('form');
 
+form.addEventListener('submit', (e)=> {
+    e.preventDefault();
+})
 addBook.addEventListener('click' , showForm);
 
 function showForm() {
