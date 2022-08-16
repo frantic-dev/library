@@ -40,12 +40,16 @@ doneBtn.addEventListener('click', () => {
 
 let myLibrary = [];
 
-function Book(title , author , genre , pages ) {
-    this.title = title,
-    this.author = author,
-    this.genre = genre,
-    this.pages = pages
-};
+class Book {
+    constructor (title, author, genre , pages) {
+        this.title = title,
+        this.author = author,
+        this.genre = genre,
+        this.pages = pages,
+        this.read = "not read"
+    }
+}
+
 function addBookToLibrary() {
     return myLibrary.push(new Book(titleInput, authorInput, genreInput, pagesInput))
 };
@@ -79,13 +83,20 @@ function createCard(book) {
         div.appendChild(read);
         read.addEventListener('click', () => {
             read.textContent = 'Read';
+
             if(read.style.backgroundColor === 'rgb(255, 123, 123)') read.style.backgroundColor = 'rgb(45, 255, 80)';
             else {
                 read.textContent = "Not read"
                 read.style.backgroundColor = 'rgb(255, 123, 123)'
             }
+            let divBtnIndex = booksInLibrary.indexOf(div);
+            updateReadStatus(myLibrary, divBtnIndex, read.textContent)
+            console.log(myLibrary)
         })
 };
+function updateReadStatus(array, index, status) {
+    return array[index].read = status;
+}
 
 function removeBook(array,index) {
     return array.splice(index , 1);

@@ -67,10 +67,10 @@ form {
     background-color: rgb(228, 228, 127);
     z-index: 1;
     height: 70%;
-    width: 30%;
+    width: 50%;
     position: fixed;
     top:15%;
-    left:35%;
+    left:25%;
     border-radius: 2%;
     box-shadow: 0 0 5px black;
 }
