@@ -24,19 +24,9 @@ pages.addEventListener('keyup', () => {
     return pagesInput =  pages.value;
 });
 
-const doneBtn = document.querySelector('#done-btn');
 const bookContainer = document.querySelector("#book-container");
 
 let booksInLibrary = "";
-
-doneBtn.addEventListener('click', () => {
-    addBookToLibrary();
-    let lastBook = myLibrary.length - 1;
-    createCard(myLibrary[lastBook]);
-    hideForm();
-    resetForm();
-});
- 
 
 let myLibrary = [];
 
@@ -105,9 +95,6 @@ function removeBook(array,index) {
 const addBook = document.querySelector('#add-book-btn');
 const form = document.querySelector('form');
 
-form.addEventListener('submit', (e)=> {
-    e.preventDefault();
-})
 addBook.addEventListener('click' , showForm);
 
 function showForm() {
@@ -118,13 +105,11 @@ function hideForm() {
     return form.setAttribute('style', "display: none;")
 };
 
-function resetForm () {
-    title.value = '';
-    author.value = "";
-    genre.value = '';
-    pages.value = '';
-    titleInput = "";
-    authorInput = "";
-    genreInput = "";
-    pagesInput = "";
-}
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    addBookToLibrary();
+    let lastBook = myLibrary.length - 1;
+    createCard(myLibrary[lastBook]);
+    hideForm();
+    form.reset()
+});
