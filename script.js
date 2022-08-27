@@ -116,5 +116,6 @@ form.addEventListener('submit', (e) => {
 
 const exitFormBtn = document.getElementById('exit-form-btn');
 exitFormBtn.addEventListener('click', () => {
+    form.reset();
     form.style.display = "none";
 } )
