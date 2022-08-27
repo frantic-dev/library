@@ -32,7 +32,10 @@ h2 {
     font-weight: 600;
     text-align: center;
     margin-top: 2% ;
-    margin-bottom: 7%;
+    margin-bottom: 5%;
+    color: rgb(253, 253, 253);
+    padding-bottom: 15px;
+    border-bottom: 3px dotted white;
 }
 input {
     margin: 10px 10px;
@@ -40,20 +43,24 @@ input {
     padding: 5px ;
     font-size: 100%;
     width: 95%;
+    border-radius: 5px;
+    border: none;
 }
 label {
     display: block;
     margin-left: 10px;
     font-family: 'raleway', sans-serif;
     font-size: 100%;
+    color: rgb(15, 60, 99);
 }
 #book-container {
     display: flex;
     flex-flow: row wrap;
+    padding-top: 20px;
 }
 div > div {
     border: 1px solid;
-    padding: 10px;
+    padding: 20px 10px;
     width: 15vw;
     min-width: 190px;
     height: 14rem;
@@ -64,18 +71,56 @@ div > div {
 }
 form {
     display: none;
-    background-color: rgb(228, 228, 127);
-    z-index: 1;
-    height: 70%;
-    width: 50%;
+    background-color: rgb(223, 151, 151);
+    height: max(50%, 420px);
+    width: min(80%, 350px);
     position: fixed;
-    top:15%;
-    left:25%;
+    top: calc((100% - 65%) / 2);
+    left: calc((100% - min(80%, 350px)) / 2);
+    padding: 1%;
     border-radius: 2%;
     box-shadow: 0 0 5px black;
 }
 #done-btn {
-    width: 50%;
-    margin-left: 24%;
+    width: 40%;
+    margin-left: 30%;
     font-family: 'raleway', sans-serif;
+}
+#done-btn:hover {
+    filter: brightness(110%);
+    outline: 3px solid rgb(15, 60, 99) ;
+}
+#exit-form-btn {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    border-radius: 5px;
+    font-size: 20px;
+    padding: 0 7px;
+    background-color: rgb(106, 163, 109);
+    box-shadow: 0 0 2px black;
+    border: none;
+}
+#exit-form-btn span {
+    position: relative;
+    bottom: 1px;
+    color: white;
+}
+#exit-form-btn:hover {
+    background-color: rgb(235, 141, 141);
+    box-shadow: none;
+    outline: 2px solid rgb(77, 76, 76);
+}
+#exit-form-btn:active {
+    outline: none;
+    background-color: rgb(247, 64, 64);
+}
+#book-container span {
+    background-color: rgb(169, 174, 182);
+    padding: 0 5px;
+    border-radius: 5px;
+    outline: 2px solid black;
+}
+#book-container span:hover {
+    filter: brightness(120%);
 }
