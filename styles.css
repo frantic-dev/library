@@ -71,6 +71,7 @@ div > div {
 }
 form {
     display: none;
+    z-index: 1;
     background-color: rgb(223, 151, 151);
     height: max(50%, 420px);
     width: min(80%, 350px);
